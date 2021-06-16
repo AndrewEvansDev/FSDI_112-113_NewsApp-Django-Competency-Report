@@ -1,0 +1,15 @@
+:root{
+    --c1-:#423131;
+    --c2-: #384857;
+    --c3-: #2e5f7c;
+    --c3l: #eaeff1;
+    --c4-: #583847;
+    --c5-: #811111;
+}
+
+body{
+    background-image:url("/static/img/bg.png");
+}
+header{
+    background-image: url("/static/img/headerbg.png");
+}

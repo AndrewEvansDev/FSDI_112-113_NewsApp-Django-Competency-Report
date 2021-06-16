@@ -31,14 +31,10 @@ class ArticleDetailView(DetailView):
     model = Article
     template_name = 'article_detail.html'
 
-class ArticleCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
+class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Article
     template_name = 'article_new.html'
     fields = ('title', 'body',)
-
-    def test_func(self):
-        obj = self.get_object()
-        return obj.author == self.request.user
 
     def form_valid(self, form):
         form.instance.author = self.request.user
