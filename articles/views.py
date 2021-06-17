@@ -3,7 +3,7 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import (
     UpdateView, DeleteView, CreateView,)
 from django.urls import reverse_lazy
-from .models import Article
+from .models import Article, Comment
 
 class ArticleListView(ListView):
     template_name = 'article_list.html'
@@ -30,6 +30,14 @@ class ArticleDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 class ArticleDetailView(DetailView):
     model = Article
     template_name = 'article_detail.html'
+
+class ArticleCommentView(LoginRequiredMixin, CreateView):
+    model = Comment
+    template_name = 'article_comment.html'
+    fields = ('article','comment',)
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
 class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Article

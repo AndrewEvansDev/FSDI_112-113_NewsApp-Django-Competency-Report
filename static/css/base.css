@@ -6,10 +6,41 @@
     --c4-: #583847;
     --c5-: #811111;
 }
-
+*{
+    font-family: 'Epilogue', sans-serif;
+}
 body{
     background-image:url("/static/img/bg.png");
 }
 header{
     background-image: url("/static/img/headerbg.png");
+}
+a.font-dd{
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-size: 1.8rem;
+    color:white;
+}
+a.font-link{
+    font-family: 'Monofett', cursive;
+    font-weight: 900;
+    text-decoration: none;
+    color:white;
+    font-size: 2rem;
+}
+input.btn-color{
+    background-color: var(--c3-);
+    color:var(--c3l);
+}
+
+/* form wrap */
+
+div.input-wrap{
+    max-width: 100%;
+    width: 60%;
+}
+select#id_article{
+    width:fit-content;
+}
+input#id_comment:focus{
+    height:80px;
 }
