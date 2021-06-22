@@ -3,13 +3,13 @@
 {% block title %}Edit article{% endblock title %}
 
 {% block content %}
-
+<div class="input-wrap">
     <h1>Edit</h1>
     <form method="POST">
         {% csrf_token %}
         {{ form|crispy }}
-        <input type="submit" class="btn btn-dark" value="Submit Changes">
+        <input type="submit" class="btn btn-color" value="Submit Changes">
 
     </form>
-
+</div>
 {% endblock content %}

@@ -2,5 +2,11 @@
 {% block title %}Forbidden{% endblock title %}
 
 {% block content %}
-<h1>You're probably just in the wrong place.</h1>
+<div class="warning-keep-out">
+    <div class="light-error-text">
+        <h1 class="error-msg">403 Forbidden</h1> 
+        <p>You're probably just in the wrong place.</p>
+        <p><a class="error-go-home" aria-current="page" href={% url 'home' %}>Go Home</a></p>
+    </div>
+</div>
 {% endblock content %}

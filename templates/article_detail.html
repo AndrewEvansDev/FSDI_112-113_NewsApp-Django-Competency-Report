@@ -2,14 +2,35 @@
 {% block title %}{{ article.title }} Details{% endblock title %}
 
 {% block content %}
-
-<article class="article-entry">
+<div class="article-page-wrap">
+<article class="article-entry container">
     <h1>{{ article.title }}</h1>
-    <small>{{ article.author }}||{{ article.date }}</small>
-    <p>{{ article.body }}</p>
-</article>
-<a href={% url 'article_edit' article.pk %}>Edit</a> <a href={% url 'article_delete' article.pk %}>Delete</a><a href={% url 'article_comment' article.pk %}>Comment</a>
-<p>Back to <a href={% url 'article_list' %}>Article List</a></p>
+    <div class="article-body-flex">
+        <div class="detail-img-pad"><img class="detail-img-sizer" src="https://picsum.photos/180/250?random={{ article.id }}" alt="..."></div>
+        <div class="article-detail-body">
+            <p>{{ article.body }}</p>
+            <p class="article-detail-info">Author ~{{ article.author }}, {{ article.date|date:"M d, Y" }}</p>
+        </div>
+        
+    </div>
+    <button class="btn-news"><a href={% url 'article_list' %}>Back</a></button>
+    <button class="btn-news"><a href={% url 'article_edit' article.pk %}>Edit</a></button>
+    <button class="btn-news"><a href={% url 'article_delete' article.pk %}>Delete</a></button>
+    <button class="btn-news"><a href={% url 'article_comment' article.pk %}>Comment</a></button>
+</article>    
+<aside class="container comment-wrap">
+    <ul class="list-group">
+        <h1 class="article-comments">Comments</h1>
+        {% for comment in article.comments.all %}
+        <ul class="list-group list-group-horizontal">
+            <li class="list-group-item">{{ comment }}</li>
+            <li class="list-group-item">{{ comment.author }} </li>
+            <li class="list-group-item">{{ comment.date|date:"P - M d, Y" }} </li>
+        </ul>
+        {% endfor %}
+    </ul>
+</aside>
 
+</div>
 
 {% endblock content %}

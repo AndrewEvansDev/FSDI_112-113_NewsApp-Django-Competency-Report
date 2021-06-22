@@ -4,21 +4,13 @@
 
 {% block content %}
 
-{% if user.is_authenticated %}
+
 
 <br />
 <div class="jumbotron">
-    <h1 class="display-4">Newspaper App</h1>
-    <p class="lead">A newspaper website built with django</p>
-    <p class="lead"><a class="btn btn-dark btn-lg" href={% url 'article_list' %}>View All Articles</a></p>
+    <div class="home-main-content">
+        <h1 class="display-4">Liberty Tree News</h1>
+        <button class="btn btn-lg lead"><a class="home-list-a" href={% url 'article_list' %}>View All Articles</a></button>
+    </div>
 </div>
-<p><a href="{% url 'logout' %}">Log Out</a></p>
-
-{% else %}
-
-<button type="button" class="btn btn-dark"><a href="{% url 'login' %}">Log In</a></button>
-<button type="button" class="btn btn-dark"><a href="{% url 'signup' %}">Sign Up</a></button>
-
-{% endif %}
-
 {% endblock content %}

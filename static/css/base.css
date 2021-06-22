@@ -5,6 +5,7 @@
     --c3l: #eaeff1;
     --c4-: #583847;
     --c5-: #811111;
+    --c6-: #babdb2;
 }
 *{
     font-family: 'Epilogue', sans-serif;
@@ -14,6 +15,9 @@ body{
 }
 header{
     background-image: url("/static/img/headerbg.png");
+}
+button.navbar-toggler{
+    background-color: #38485768;
 }
 a.font-dd{
     font-family: 'Saira Extra Condensed', sans-serif;
@@ -32,6 +36,45 @@ input.btn-color{
     color:var(--c3l);
 }
 
+h1.error-msg{
+    width:fit-content;
+    padding:1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.warning-keep-out p{
+    padding: 1rem;
+}
+div.warning-keep-out{
+    background-image:url("/static/img/error-text-sign.png");
+    min-height:500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left:auto;
+    margin-right:auto;
+    width:540px;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius: 10px;
+    margin-top:1rem;
+    border:5px solid var(--c3-);
+    color:var(--c5-);
+}
+a.error-go-home{
+    text-decoration: none;
+    color:var(--c5-);
+    font-weight: 900;
+}
+a.error-go-home:hover{
+    color:#c70f0f;
+}
+div.light-error-text{
+    background-color: #eaeff1ec;
+    width: fit-content;
+    border-radius: 10px;
+    border:6px inset #811111;
+}
+
 /* form wrap */
 
 div.input-wrap{
@@ -43,4 +86,294 @@ select#id_article{
 }
 input#id_comment:focus{
     height:80px;
+}
+form.d-flex{
+    height:2.5rem;
+    
+}
+
+.btn-news {
+	color: #eaeff1;
+	font-size: 18px;
+	border-radius: 10px;
+	border: 1px #384857 solid;
+	padding: .5rem 1.5rem;
+	background: linear-gradient(180deg, #2e5f7c 68%, #6695b0 100%);
+	text-shadow: 1px 1px 1px #528ecc;
+	box-shadow: inset 1px 1px 2px 0px #bbdaf7;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+}
+.btn-news:hover {
+	background: linear-gradient(180deg, #3d718f 68%, #2e5f7c 100%);
+}
+.btn-news:active {
+	position:relative;
+	top:1px;
+}
+.btn-news a{
+    text-decoration: none;
+    color:var(--c3l);
+    font-family: 'Epilogue', sans-serif;
+    font-size: 1.3rem;
+}
+
+footer {
+    background-image: url("/static/img/headerbg.png");
+    height:70px;
+    width:100%;
+    bottom:0;
+    color:var(--c6-);
+    position: bottom;
+}
+
+footer.footer-flex{
+    display:flex;
+    justify-content: space-between;
+}
+.footer-flex span{
+    padding:1rem;
+}
+span.newsdumppublishing{
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-size:2rem;
+}
+span.copyright{
+    margin-bottom: 0;
+    margin-top:auto;
+}
+/* Home View */
+
+div.jumbotron{
+    background-image: url("/static/img/treeraw.png");
+    height:600px;
+    background-repeat:no-repeat;
+    display:flex;
+    flex-direction: column;
+    background-position:center;
+}
+div.home-main-content{
+    background-color:#2e5f7ce0;
+    width:fit-content;
+    margin:auto;
+    margin-top:0;
+    padding:2rem;
+    border-radius: 10px;
+    display:flex;
+    flex-direction: column;
+
+}
+h1.display-4{
+    color:var(--c3l);
+    text-shadow: 3px 3px 7px rgba(88, 56, 71, 0.8);
+}
+.home-main-content h1, .home-main-content p{
+    text-align: center;
+    
+}
+
+button.lead{
+    background-color:var(--c1-);
+    text-align: center;
+    width:fit-content;
+    text-align: center;
+    margin-right:auto;
+    margin-left:auto;
+}
+a.home-list-a{
+    text-decoration: none;
+    color:var(--c3l);
+}
+
+/* list view */
+
+div.list-wrap{
+    background-image: url('/static/img/list-post-bg3.png');
+    background-color:var(--c3-);
+    width:fit-content;
+    padding: 2rem 3rem 3rem 3rem;
+    margin-right:auto;
+    margin-left:auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top: 10px solid #4231315b;
+}
+
+div.card-location{
+    margin-right:auto;
+    margin-left:auto;
+}
+p.card-article-body{
+        text-overflow: ellipsis;
+        word-wrap: break-word;
+        overflow: hidden;
+        max-height: 7rem;
+        line-height: 1.5rem;
+}
+.card-title a{
+    text-decoration: none;
+    color:var(--c1-);
+}
+.card-title a:hover{
+    color:var(--c5-);
+    text-shadow: 1px 1px 1px 1px var(--c4-);
+}
+
+/* setting initial displays off here for speed, if I were implementing this in scale I would use javascript. */
+div#list-display-2, div#list-display-3, div#list-display-4, div#list-display-5, div#list-display-6, div#list-display-7,
+div#list-display-8, div#list-display-9,div#list-display-1{
+    display:none;
+}
+div#list-display-1{
+    display:block;
+}
+
+i.fas{
+    color:var(--c3l);
+    font-size:2rem;
+}
+div.arrow-wrap{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+h1.list-page-h1{
+    text-align: center;
+    color:var(--c6-);
+    font-weight: 900;
+    font-size:3rem;
+    font-family: 'Saira Extra Condensed', sans-serif;
+}
+.cont-reading a{
+    text-decoration: none;
+    color:var(--c1-);
+}
+.cont-reading a:hover{
+    color:var(--c5-);
+}
+p.cont-reading{
+    text-align: right;
+    margin-left:auto;
+    margin-right:0;
+}
+p.card-footer-flex{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+div.list-link-icons{
+    background-color:var(--c3-);
+    color:var(--c3l);
+    width: fit-content;
+    margin-left:auto;
+    margin-right:auto;
+    padding:1rem;
+    margin-top: 1rem;
+    margin-bottom:1rem;
+    border-radius: 10px;
+    text-align: center;
+}
+.list-link-icons img{
+    max-width:25px;
+    filter: invert(97%) sepia(8%) saturate(168%) hue-rotate(167deg) brightness(96%) contrast(97%);
+}
+.list-link-icons img:hover{
+    filter: invert(10%) sepia(71%) saturate(3685%) hue-rotate(352deg) brightness(106%) contrast(95%);
+}
+
+/* detail view */
+div.article-page-wrap{
+    background-image: url('/static/img/list-post-bg3.png');
+}
+
+article.article-entry{
+    background-color:#eaeff185;
+    padding:1rem;
+}
+aside.comment-wrap{
+    background-color:#babdb282;
+    padding:2rem;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-bottom:10rem;
+}
+h1.article-comments{
+    padding-left:1rem;
+    color:var(--c3l);
+}
+ul.list-group-horizontal{
+    max-width:100%;
+    display: flex;
+}
+.list-group-horizontal li{
+    flex: 1;
+}
+.list-group-horizontal li:first-child{
+    flex: 2;
+}
+div.article-detail-body{
+    max-width: 700px;
+    padding:1rem;
+    text-indent: .5rem;
+}
+.article-detail-body p{
+    color:var(--c3l);
+    text-shadow:1px 1px 1px var(--c3-);
+}
+div.article-body-flex{
+    display:flex;
+    justify-content: left;
+}
+/* setting this in lieu of making multiple views and custom image db options. Will implement on later release. */
+img.detail-img-sizer{
+    max-height: 250px;
+    max-width: 180px;
+	box-shadow: 3px 3px 9px rgba(46, 95, 124, 0.4)!important; 
+	-webkit-box-shadow: 3px 3px 9px rgba(46, 95, 124, 0.4) !important; 
+	-moz-box-shadow: 3px 3px 9px rgba(46, 95, 124, 0.4) !important; 
+}
+div.detail-img-pad{
+    padding:1rem;
+}
+p.article-detail-info{
+    text-align: right;
+    padding-right:2rem;
+}
+.article-entry h1{
+    color:var(--c3l);
+    text-shadow:2px 2px 7px var(--c3-);
+}
+
+/* comments and registration pages */
+div.input-wrap{
+    background-color:#babdb2c4;
+    padding:1rem;
+    color:var(--c3l);
+    text-shadow:2px 2px 7px var(--c3-);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+}
+input.btn-color{
+    margin-top:.2rem;
+}
+
+button.btn-color{
+    margin-top: .2rem;
+    background-color: var(--c3-);
+    color:var(--c3l);
+}
+#hint_id_password1 ul li{
+    color:var(--c3l);
+}
+small#hint_id_username{
+    color:var(--c3l) !important;
+}
+small#hint_id_password2{
+    color:var(--c3l) !important;
+}
+#hint_id_new_password1 ul li{
+    color:var(--c3l);
 }

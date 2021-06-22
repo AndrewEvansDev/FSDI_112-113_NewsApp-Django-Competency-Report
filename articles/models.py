@@ -2,6 +2,7 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 from django.urls import reverse
+from datetime import datetime
 
 
 class Article(models.Model):
@@ -25,6 +26,7 @@ class Comment(models.Model):
         on_delete=models.CASCADE, 
         related_name="comments")
     comment = models.CharField(max_length=140)
+    date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(
         get_user_model(),
         on_delete=models.CASCADE,
